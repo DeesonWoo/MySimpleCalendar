@@ -97,6 +97,19 @@ public class MyCalendarUtils {
     }
 
     /**
+     * 获取当前月份的周数
+     * @param year
+     * @param month
+     * @return
+     */
+    public int getWeekCountsOfMonth(int year, int month) {
+        int lastDayOfMonth = getDaysOfCertainMonth(year, month);
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(year, month - 1, lastDayOfMonth);
+        return calendar.get(Calendar.WEEK_OF_MONTH);
+    }
+
+    /**
      * 格式化标题展示
      *
      * @param year
